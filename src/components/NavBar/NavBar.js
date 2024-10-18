@@ -116,72 +116,44 @@ export const NavBar = () => {
 
   return (
     <div>
-      <div className="navArea">
-        <Grid container>
-          <Grid item xs={12} md={6} lg={4}>
-            <div className="logoImg" onClick={logoImgClicked}>
-              <img src={logoImg} alt=""></img>
-            </div>
-          </Grid>
-          <Grid
-            item
-            xs={12}
-            md={6}
-            lg={4}
-            sx={{
-              display: 'flex',
-              flexDirection: 'column',
-              justifyContent: 'center',
-              alignItems: 'center',
-            }}
-          >
-            <div className="inputDiv">
-              <input type="text" placeholder="Search" className="searchInput" />
-            </div>
-          </Grid>
-          <Grid
-            item
-            xs={12}
-            md={12}
-            lg={4}
-            sx={{
-              display: 'flex',
-              flexDirection: 'column',
-              justifyContent: 'center',
-              alignItems: 'center',
-            }}
-          >
-            <div className="navBtns">
-              <div className="navBtnWrappedDiv">
-                <Link to="/listcoin">
-                  <button className="navBtn" type="button">
-                    List Coin
-                  </button>
-                </Link>
-              </div>
+      <div className="flex justify-center mb-5 items-center flex-wrap gap-3">
+        <div className="logoImg shrink-0" onClick={logoImgClicked}>
+          <img src={logoImg} alt=""></img>
+        </div>
 
-              <div className="navBtnWrappedDiv">
-                <Link to="/promote">
-                  <button className="navBtn" type="button">
-                    Promote
-                  </button>
-                </Link>
+        <div className="inputDiv">
+          <input type="text" placeholder="Search" className="searchInput" />
+        </div>
 
-                {/* <button className='navBtn' onClick={() => window.open("https://t.me/onlygemsfinance", "_blank")}>Promote</button>  */}
-              </div>
-              <div className="navBtnWrappedDiv">
-                <button className="navBtn" onClick={() => onConnectWalletHandler()}>
-                  {walletAddress === ''
-                    ? 'Connect Wallet'
-                    : walletAddress.substring(0, 5) + '..' + walletAddress.substring(36, 40)}
-                </button>
-              </div>
-            </div>
-          </Grid>
-        </Grid>
+        <div className="flex flex-row items-center justify-center">
+          <div className="navBtnWrappedDiv">
+            <Link to="/listcoin">
+              <button className="navBtn" type="button">
+                List Coin
+              </button>
+            </Link>
+          </div>
+
+          <div className="navBtnWrappedDiv">
+            <Link to="/promote">
+              <button className="navBtn" type="button">
+                Promote
+              </button>
+            </Link>
+
+            {/* <button className='navBtn' onClick={() => window.open("https://t.me/onlygemsfinance", "_blank")}>Promote</button>  */}
+          </div>
+          <div className="navBtnWrappedDiv">
+            <button className="navBtn" onClick={() => onConnectWalletHandler()}>
+              {walletAddress === ''
+                ? 'Connect Wallet'
+                : walletAddress.substring(0, 5) + '..' + walletAddress.substring(36, 40)}
+            </button>
+          </div>
+        </div>
       </div>
 
-      <div className="btnArea">
+      <div className="btnArea !justify-center flex-wrap  [&>*]:!p-2 [&>*]:!m-2 w-fit mx-auto">
         <button id="cryptocurrenciesBtn">Cryptocurrencies</button>
         <select
           id="selectTools"
