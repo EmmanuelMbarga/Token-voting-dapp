@@ -147,15 +147,7 @@ export const NavBar = () => {
 
 
 
-
-
-
-
-
-
-
-
-
+{/*------------------------------------------------------------------------------this is the old code------------------------------------------------------------------------------*/}
           {/* <div className="navBtnWrappedDiv">
           <Link to="/listcoin">
             <button className="navBtn" type="button">
@@ -181,6 +173,8 @@ export const NavBar = () => {
               : walletAddress.substring(0, 5) + '..' + walletAddress.substring(36, 40)}
           </button>
         </div> */}
+{/*------------------------------------------------------------------------------this is the old code------------------------------------------------------------------------------*/}
+
         </div>
       </div>
 
