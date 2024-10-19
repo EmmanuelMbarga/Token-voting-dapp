@@ -116,40 +116,77 @@ export const NavBar = () => {
 
   return (
     <div>
-      <div className="flex justify-center mb-5 items-center flex-wrap gap-3">
-        <div className="logoImg shrink-0" onClick={logoImgClicked}>
-          <img src={logoImg} alt=""></img>
+      <div className="px-2 flex items-center  Laptop:flex-col Tablette:flex-col mobil:flex-col MiniPortable:flex-col">
+        <div className="mr-2 w-full flex items-center Laptop:flex-col Tablette:flex-col mobil:flex-col MiniPortable:flex-col">
+          <div className="logoImg shrink-0" onClick={logoImgClicked}>
+            <img src={logoImg} alt=""></img>
+          </div>
+          <div className="w-[60%]">
+            <input
+              type="text"
+              placeholder="Search"
+              className="bg-transparent border rounded p-2 text-sm text-white w-full"
+            />
+          </div>
         </div>
-
-        <div className="inputDiv">
-          <input type="text" placeholder="Search" className="searchInput" />
-        </div>
-
-        <div className="flex flex-row items-center justify-center">
-          <div className="navBtnWrappedDiv">
+        <div className="p-4 w-full screenLarge:ml-2 grid grid-cols-3 Laptop:my-10 Tablette:my-7 Tablette:gap-2 gap-4 mobil:my-4  mobil:grid-cols-1 MiniPortable:grid-cols-1 MiniPortable:my-3">
+          <div>
             <Link to="/listcoin">
-              <button className="navBtn" type="button">
+              <button
+                className="text-white w-full border hover:shadow-md text-sm font-bold cursor-pointer bg-slate-950 transition screenLarge:hover:bg-gradient-to-r Laptop:hover:bg-gradient-to-r mobil:bg-gradient-to-r MiniPortable:bg-gradient-to-r from-cyan-950 to-pink-500 rounded-full px-4 py-2"
+                type="button"
+              >
                 List Coin
               </button>
             </Link>
           </div>
-
-          <div className="navBtnWrappedDiv">
+          <div>
             <Link to="/promote">
-              <button className="navBtn" type="button">
+              <button
+                className="text-white w-full border hover:shadow-md text-sm font-bold  cursor-pointer bg-slate-950 transition hover:transition screenLarge:hover:bg-gradient-to-r Laptop:hover:bg-gradient-to-r mobil:bg-gradient-to-r MiniPortable:bg-gradient-to-r  from-cyan-950 to-pink-500  rounded-full px-4 py-2"
+                type="button"
+              >
                 Promote
               </button>
             </Link>
-
-            {/* <button className='navBtn' onClick={() => window.open("https://t.me/onlygemsfinance", "_blank")}>Promote</button>  */}
           </div>
-          <div className="navBtnWrappedDiv">
-            <button className="navBtn" onClick={() => onConnectWalletHandler()}>
+          <div>
+            <button
+              className="text-white w-full border hover:shadow-md text-sm font-bold  cursor-pointer bg-slate-950 transition hover:transition screenLarge:hover:bg-gradient-to-r Laptop:hover:bg-gradient-to-r mobil:bg-gradient-to-r MiniPortable:bg-gradient-to-r  from-cyan-950 to-pink-500  rounded-full px-4 py-2"
+              type="button"
+              onClick={() => onConnectWalletHandler()}
+            >
               {walletAddress === ''
                 ? 'Connect Wallet'
                 : walletAddress.substring(0, 5) + '..' + walletAddress.substring(36, 40)}
             </button>
           </div>
+
+          {/* <div className="navBtnWrappedDiv">
+          <Link to="/listcoin">
+            <button className="navBtn" type="button">
+              List Coin
+            </button>
+          </Link>
+        </div>
+
+        <div className="navBtnWrappedDiv">
+          <Link to="/promote">
+            <button className="navBtn" type="button">
+              Promote
+            </button>
+          </Link> */}
+
+          {/* <button className='navBtn' onClick={() => window.open("https://t.me/onlygemsfinance", "_blank")}>Promote</button>  */}
+          {/* </div> */}
+
+          {/* <div className="navBtnWrappedDiv">
+          <button className="navBtn" onClick={() => onConnectWalletHandler()}>
+            {walletAddress === ''
+              ? 'Connect Wallet'
+              : walletAddress.substring(0, 5) + '..' + walletAddress.substring(36, 40)}
+          </button>
+        </div> */}
         </div>
       </div>
 
@@ -164,8 +201,8 @@ export const NavBar = () => {
         >
           <option style={{ display: tool ? 'none' : 'hidden' }}>Tools</option>
           {/* <option key="buy_nitrogem" value="/buynitrogem" onClick={toolsChanged}>Buy Nitrogem</option>
-                  <option key="listing_tiers" value="" onClick={toolsChanged}>Others will be soon</option>
-                   */}
+                <option key="listing_tiers" value="" onClick={toolsChanged}>Others will be soon</option>
+                 */}
         </select>
 
         <button id="treasuryBtn" onClick={treasuryBtnClicked}>
