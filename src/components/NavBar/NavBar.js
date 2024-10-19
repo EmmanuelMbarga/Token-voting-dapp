@@ -10,6 +10,7 @@ import { connectWallet, getCurrentWalletConnected } from '../../helpers/wallet';
 import { NotificationManager } from 'react-notifications';
 import { useNavigate } from 'react-router-dom';
 import { AppContext } from '../../context';
+import BtnSectionNav1 from './btnSectionNav1';
 
 export const NavBar = () => {
   const [tool, setTool] = React.useState(false);
@@ -130,26 +131,9 @@ export const NavBar = () => {
           </div>
         </div>
         <div className="p-4 w-full screenLarge:ml-2 grid grid-cols-3 Laptop:my-10 Tablette:my-7 Tablette:gap-2 gap-4 mobil:my-4  mobil:grid-cols-1 MiniPortable:grid-cols-1 MiniPortable:my-3">
-          <div>
-            <Link to="/listcoin">
-              <button
-                className="text-white w-full border hover:shadow-md text-sm font-bold cursor-pointer bg-slate-950 transition screenLarge:hover:bg-gradient-to-r Laptop:hover:bg-gradient-to-r mobil:bg-gradient-to-r MiniPortable:bg-gradient-to-r from-cyan-950 to-pink-500 rounded-full px-4 py-2"
-                type="button"
-              >
-                List Coin
-              </button>
-            </Link>
-          </div>
-          <div>
-            <Link to="/promote">
-              <button
-                className="text-white w-full border hover:shadow-md text-sm font-bold  cursor-pointer bg-slate-950 transition hover:transition screenLarge:hover:bg-gradient-to-r Laptop:hover:bg-gradient-to-r mobil:bg-gradient-to-r MiniPortable:bg-gradient-to-r  from-cyan-950 to-pink-500  rounded-full px-4 py-2"
-                type="button"
-              >
-                Promote
-              </button>
-            </Link>
-          </div>
+          <BtnSectionNav1 title="List Coin" link="/listcoin"/>
+          <BtnSectionNav1 title="Promote" link="/promote"/>
+
           <div>
             <button
               className="text-white w-full border hover:shadow-md text-sm font-bold  cursor-pointer bg-slate-950 transition hover:transition screenLarge:hover:bg-gradient-to-r Laptop:hover:bg-gradient-to-r mobil:bg-gradient-to-r MiniPortable:bg-gradient-to-r  from-cyan-950 to-pink-500  rounded-full px-4 py-2"
@@ -161,6 +145,17 @@ export const NavBar = () => {
                 : walletAddress.substring(0, 5) + '..' + walletAddress.substring(36, 40)}
             </button>
           </div>
+
+
+
+
+
+
+
+
+
+
+
 
           {/* <div className="navBtnWrappedDiv">
           <Link to="/listcoin">
