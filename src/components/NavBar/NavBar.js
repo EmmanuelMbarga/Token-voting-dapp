@@ -133,7 +133,6 @@ export const NavBar = () => {
         <div className="p-4 w-full screenLarge:ml-2 grid grid-cols-3 Laptop:my-10 Tablette:my-7 Tablette:gap-2 gap-4 mobil:my-4  mobil:grid-cols-1 MiniPortable:grid-cols-1 MiniPortable:my-3">
           <BtnSectionNav1 title="List Coin" link="/listcoin"/>
           <BtnSectionNav1 title="Promote" link="/promote"/>
-
           <div>
             <button
               className="text-white w-full border hover:shadow-md text-sm font-bold  cursor-pointer bg-slate-950 transition hover:transition screenLarge:hover:bg-gradient-to-r Laptop:hover:bg-gradient-to-r mobil:bg-gradient-to-r MiniPortable:bg-gradient-to-r  from-cyan-950 to-pink-500  rounded-full px-4 py-2"
